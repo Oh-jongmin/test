@@ -1,0 +1,27 @@
+name: Simple Deploy Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v4
+
+    - name: Echo start
+      run: echo "🎉 GitHub Actions 시작!"
+
+    - name: Simulate Docker build
+      run: echo "🐳 Docker 이미지 빌드 중..."
+
+    - name: Simulate ECR push
+      run: echo "📤 ECR에 이미지 푸시 중..."
+
+    - name: Simulate kubectl set image
+      run: echo "🚀 EKS에 배포 중..."
+
