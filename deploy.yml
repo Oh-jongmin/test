@@ -48,7 +48,7 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
       run: |
-        kubectl set image deployment/pnp-app-deployment \
-          pnp-app-deployment=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+        kubectl set image deployment/pnp-app \
+          pnp-app=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
           -n default
 
